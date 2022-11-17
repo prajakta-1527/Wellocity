@@ -121,7 +121,6 @@ def wishtocart(request):
             a=int(pr.discounted_price)
             amt+=a
             cart.amount=amt
-            
             cart.save()
 
         
