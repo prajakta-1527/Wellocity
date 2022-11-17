@@ -1,0 +1,143 @@
+{% extends 'index.html' %}
+{% block body %}
+      
+     
+      <div class="container my-5">
+       <div class="row text-light text-center">
+       <h3>Order Details</h3>
+        
+        <div class="col-sm-9 offset-sm-1 mt-3">
+         <div class="row">
+          {% for i,j,k in mylist %}
+            <div class="col-md-4">
+                <div class="card text-dark" style="width: 18rem;">
+                    <img src={{i.image}} class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title text-dark">{{i.product_name}}</h5>
+                      <h5 class="card-title text-dark">quantity:{{j}}</h5>
+                      <h5 class="card-title text-dark">Total price:{{j}}</h5>
+                      <p class="card-text"></p>
+                      <a href="shop/2" class="btn btn-primary">View here</a>
+                    </div>
+                  </div>
+              </div>
+              {% endfor %}    
+              <div class="card mb-3 mt-3">
+                <img class="card-img-top" src="https://img.freepik.com/free-vector/flat-horizontal-sale-banner-template-with-photo_23-2149015614.jpg?w=1380&t=st=1667806785~exp=1667807385~hmac=4d7d4ab6f43e7dcb1e23f4a817712ea52b19778537b0368e3eb44d315fe1a091" alt="Card image cap">
+              </div>
+              <div class="mt-3">
+              <h3 class="text-dark">Required Details</h3>
+              </div>
+              <form class="row g-3 needs-validation" method="post" action="/payment" novalidate>
+                {% csrf_token %}
+                {% if flag1 == True %}
+                <div class="col-md-4">
+                  <label for="Address1" class="form-label text-dark">Address</label>
+                  <input type="text" class="form-control" readonly class="form-control-plaintext bg-light" id="Address1" name="Address" value={{user.address}} >
+                  <div class="valid-feedback">
+                    
+                  </div>
+                </div>
+                {% else %}
+                
+                <div class="col-md-4">
+                    <label for="Address" class="form-label  text-dark">Address</label>
+                    <input type="text" class="form-control" id="Address" name="Address" required>
+                    <div class="valid-feedback">
+                    
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% if flag2 == True %}
+                  <div class="col-md-4">
+                    <label for="State1" class="form-label  text-dark">State</label>
+                    <input type="text" class="form-control"  readonly class="form-control-plaintext bg-light" id="State1" name="State" value={{user.state}}>
+                    <div class="valid-feedback">
+                      
+                    </div>
+                  </div>
+                  {% else %}
+                  <div class="col-md-4">
+                    <label for="State" class="form-label  text-dark">State</label>
+                    <input type="text" class="form-control" id="State" name="State"  required>
+                    <div class="valid-feedback">
+                      
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% if flag3 == True %}
+                  <div class="col-md-4">
+                    <label for="City1" class="form-label  text-dark">City</label>
+                    <input type="text" class="form-control"  readonly class="form-control-plaintext bg-light" id="City1" name="City" value={{user.city}} >
+                    <div class="valid-feedback">
+                      
+                    </div>
+                  </div>
+                  {% else %}
+                  <div class="col-md-4">
+                    <label for="City" class="form-label  text-dark">City</label>
+                    <input type="text" class="form-control"   id="City" name="City"  required>
+                    <div class="valid-feedback">
+                      
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% if flag4 == True %}
+                  <div class="col-md-4">
+                    <label for="Pincode1" class="form-label  text-dark">Pincode</label>
+                    <input type="Number" class="form-control" readonly class="form-control-plaintext bg-light" id="Pincode1" name="Pincode" value={{user.pincode}} >
+                    <div class="valid-feedback">
+                      
+                    </div>
+                  </div>
+                  {% else %}
+                  <div class="col-md-4">
+                    <label for="pincode" class="form-label  text-dark">Pincode</label>
+                    <input type="Number" class="form-control" id="pincode" name="Pincode" required>
+                    <div class="valid-feedback">
+                      
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% if flag5 == True %}
+                  <div class="col-md-4">
+                    <label for="Phone Number1" class="form-label  text-dark">Phone Number</label>
+                    <input type="Phone Number" class="form-control" readonly class="form-control-plaintext bg-light" id="Phone Number1" name="Phone Number" value={{user.phone_number}} >
+                    <div class="valid-feedback">
+                      
+                    </div>
+                  </div>
+                  {% else %}
+                  <div class="col-md-4">
+                    <label for="Phone Number" class="form-label  text-dark">Phone Number</label>
+                    <input type="Phone Number" class="form-control" id="Phone Number" name="Phone Number" required>
+                    <div class="valid-feedback">
+                      
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body text-dark">
+                    <h4> &#8377; {{amt}}</h4>
+                    <button class="btn btn-primary" type="submit">Make Payment</button>
+                    </div>
+                  </div>
+                
+
+         </div>
+         
+        </div>
+       </div>
+      
+      
+      
+     
+
+
+
+
+
+
+
+{% endblock body %}

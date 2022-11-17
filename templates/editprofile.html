@@ -1,0 +1,72 @@
+{% extends 'index.html' %}
+{% block body %}
+<div class="container" mt-3>
+    <h3 class = 'text-center text-dark mt-3'> Your Details</h3>
+    <form class="row g-3" method="post" action="/editprofile" enctype="multipart/form-data" >
+      {% csrf_token %}
+        <div class="col-md-4">
+          <label for="1" class="form-label text-dark">First name</label>
+          <input type="text" class="form-control" id="1" name="first_name" value={{ins.first_name}} required>
+          
+        </div>
+        <div class="col-md-4">
+          <label for="2" class="form-label  text-dark">Last name</label>
+          <input type="text" class="form-control" id="2" name="last_name" value={{ins.last_name}}>
+         
+        </div>
+        <div class="col-md-4">
+          <label for="3" class="form-label  text-dark">username</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">@</span>
+            <input type="text" class="form-control" id="3" aria-describedby="inputGroupPrepend" name="user_name" value={{ins.user_name}}>
+            
+          </div>
+        </div>
+        <form class="row g-3 ">
+            <div class="col-md-4">
+              <label for="4" class="form-label text-dark">Address</label>
+              <input type="text" class="form-control" id="4" name="address" value={{ins.address}}>
+              
+            </div>
+            <div class="col-md-4">
+              <label for="5" class="form-label  text-dark">State</label>
+              <input type="text" class="form-control" id="5" name="state" value={{ins.state}}>
+              
+            </div>
+            <div class="col-md-4">
+              <label for="6" class="form-label  text-dark">City</label>
+              <div class="input-group ">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                <input type="text" class="form-control" id="6" name="city" aria-describedby="inputGroupPrepend" value={{ins.city}}>
+                
+              </div>
+            </div>
+            <form class="row g-3 " >
+                <div class="col-md-4">
+                  <label for="7" class="form-label text-dark">Pincode</label>
+                  <input type="Number" class="form-control" name="pincode" id="7" value={{ins.pincode}}>
+                  
+                </div>
+                <div class="col-md-4">
+                  <label for="8" class="form-label  text-dark">Phone Number</label>
+                  <input type="Phone Number" class="form-control" name="phone_number" id="8" value={{ins.phone_number}}>
+                  <div class="valid-feedback">
+                  
+                  </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="9" class="form-label text-dark">Profile Image</label>
+                    <input type="file" class="form-control" id="9" name="profile_image" accept="image/png, image/jpeg" value={{ins.profile_image}}>
+                   
+                  </div>
+                <div class="mb-3 text-light">
+                    <label for="exampleFormControlTextarea1" class="form-label">Your Concerns</label>
+                    <textarea class="form-control" id="desc"name="concerns" name="desc" rows="3"></textarea>
+                  </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form>
+  </div>
+
+  {% endblock body%}

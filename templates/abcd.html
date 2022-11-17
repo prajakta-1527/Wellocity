@@ -1,0 +1,115 @@
+{% extends 'index.html' %}
+{% block body %}
+<div class="container mt-3">
+  <div class="container-fluid">
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner ">
+        <div class="carousel-item  active">
+          <img src="https://source.unsplash.com/1200x900/?medicines" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item container-fluid">
+          <img src="https://source.unsplash.com/1200x900/?health" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item container-fluid ">
+          <img src="https://source.unsplash.com/1200x900/?wellness" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+</div>
+</div>
+
+<div class="container text-center my-5 text-dark ">
+   <h2><b> Products Available </b></h2>
+  <div class="card-group mt-2">
+   {% comment %} <div class="row mt-5"> {% endcomment %}
+    <div class="col-md-4">
+      <div class="card text-light" style="width: 18rem;">
+          <img src="https://source.unsplash.com/300x200/?personal Care" class="card-img-top" alt="...">
+          <div class="card-body bg-success">
+            <h5 class="card-title text-light">Personal Care</h5>
+            <p class="card-text"></p>
+            <a href="shop/1" class="btn btn-dark bg-dark text-light">View here</a>
+          </div>
+        </div>
+   </div>
+  
+   
+   
+    <div class="col-md-4">
+      <div class="card text-light" style="width: 18rem;">
+          <img src="https://source.unsplash.com/300x200/?devices" class="card-img-top" alt="...">
+          <div class="card-body  bg-success">
+            <h5 class="card-title text-light">HealthCare Devices</h5>
+            <p class="card-text"></p>
+            <a href="shop/2" class="btn btn-dark bg-dark text-light">View here</a>
+          </div>
+        </div>
+    </div>
+
+ 
+    
+   
+    <div class="col-md-4">
+      <div class="card text-dark" style="width: 18rem;">
+          <img src="https://source.unsplash.com/300x200/?leaves" class="card-img-top" alt="...">
+          <div class="card-body  bg-success">
+            <h5 class="card-title text-light">Ayurvedic</h5>
+            <p class="card-text"></p>
+            <a href="shop/3" class="btn btn-dark bg-dark text-light">View here</a>
+          </div>
+        </div>
+    </div>
+  
+  </div>
+  <div class="card-group mt-3">
+  {% comment %} <div class="row mt-3"> {% endcomment %}
+    <div class="col-md-4">
+      <div class="card text-dark" style="width: 18rem;">
+          <img src="https://source.unsplash.com/300x200/?Diabetic Care" class="card-img-top" alt="...">
+          <div class="card-body bg-success">
+            <h5 class="card-title text-light">Diabetic Care</h5>
+            <p class="card-text"></p>
+            <a href="shop/4" class="btn btn-dark bg-dark text-light">View here</a>
+          </div>
+        </div>
+   </div>
+
+  <div class="col-md-4 ">
+    <div class="card text-dark" style="width: 18rem;">
+        <img src="https://source.unsplash.com/300x200/?covid essential" class="card-img-top" alt="...">
+        <div class="card-body  bg-success">
+          <h5 class="card-title text-light">Covid Essential</h5>
+          <p class="card-text"></p>
+          <a href="shop/5" class="btn btn-dark bg-dark text-light">View here</a>
+        </div>
+      </div>
+ </div>
+
+  <div class="col-md-4">
+    <div class="card text-dark" style="width: 18rem;">
+        <img src="https://source.unsplash.com/300x200/?Mother and Baby" class="card-img-top" alt="...">
+        <div class="card-body  bg-success">
+          <h5 class="card-title text-light">Mother and Baby</h5>
+          <p class="card-text"></p>
+          <a href="shop/6" class="btn btn-dark bg-dark text-light">View here</a>
+        </div>
+      </div>
+ </div>
+</div>
+</div >
+{% comment %} </div> {% endcomment %}
+    {% comment %} </div> {% endcomment %}
+    {% endblock body %}

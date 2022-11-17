@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+{% block body %}
+      
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<div class="btn-group btn-group-lg d-flex justify-content-center mt-2" role="group" aria-label="...">
+  
+  {% for SubCategory in req6 %}
+  
+  {% comment %} <button type="button" class="btn btn-outline-dark px-4 mt-2">{{SubCategory.sub_category}}</button> {% endcomment %}
+  <a href="/shop2/{{SubCategory.id_sub_category}}" class="btn btn-warning">{{SubCategory.sub_category}}</a>
+  {% endfor%}
+ 
+
+</div>
+
+
+
+
+<div class="container text-center my-5 text-dark ">
+  <h1><b>Products Available<b></h1>
+   <div class="row mt-5">
+    {% for Product in req %}
+     {% comment %} print({{Product.sub_category_id_sub_category.id_sub_category}}) {% endcomment %}
+      {% comment %} {% if Product.sub_category_id_sub_category.id_sub_category in allProds %} {% endcomment %}
+   <div class="col-md-4">
+      <div class="card bg-success" style="width: 18rem;">
+          <img src="{{Product.image}}" class="card-img-top" alt="..." height="300" width="300">
+          <div class="card-body">
+            <h5 class="card-title text-dark">{{Product.product_name}}</h5>
+            <p class="card-text tetx-dark"></p>
+            <a href="/prod/{{Product.idproduct}}" class="btn btn-dark">View here</a>
+          </div>
+        </div>
+        
+        {% comment %} {% for i in shop %}
+        {% if i.sub_category_id_sub_category in allProds %}
+        <h1>jhjghg</h1>
+              <h1>{{i.product_name}}</h1> {% endcomment %}
+        {% comment %} {% endif %} {% endcomment %}
+        {% comment %} {% endfor %} {% endcomment %}
+
+   </div>
+  
+{% endfor %}
+
+{% endblock body %}
+      

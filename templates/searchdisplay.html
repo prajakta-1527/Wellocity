@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% block body %}
+      
+
+      <div class="card-group mt-3">
+      {%for i in Pro2 %}
+  
+      <div class="col-md-4 mt-3 px-5">
+        <div class="card text-dark" style="width: 18rem;">
+            <img src="{{i.image}}" class="card-img-top" alt="..." height="300" width ="300">
+            <div class="card-body">
+              <h5 class="card-title text-dark">{{i.product_name}}</h5>
+              <p class="card-text"></p>
+              <a href="/prod/{{i.idproduct}}" class="btn btn-primary">View here</a>
+            </div>
+          </div>
+      </div>
+    {% endfor %}
+    </div>
+    {% endblock body %}
+      

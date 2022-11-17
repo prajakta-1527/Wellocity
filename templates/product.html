@@ -1,0 +1,70 @@
+{% extends 'index.html' %}
+{% block body %}
+      <div class="container my-5 text-dark">
+        <div class="row">
+         <div class="col-sm-6 text-center align-self-center">
+          <img src={{content.image}}>
+         </div>
+         
+         <div class="col-sm-5 offset-sm-1">
+          <h2>{{content.product_name}}</h2>
+          <hr>
+          <p>{{content.desciption}}</p> <br>
+          <h3> &#8377; {{content.discounted_price}}   <large class="fw-light text-decoration-line-through"> &#8377; {{content.price}} </small></h3> <br>
+          <h4>Stock Available:{{content.stock}}</h4> 
+          <h4>Manufacturer Details:</h4> 
+          <h5>{{content.manufacturer_idmanufacturer.company_name}}</h5> 
+          <h5>Headquarters:{{content.manufacturer_idmanufacturer.manufacturing_headquarters}}</h5> 
+          <h5>Phone Number:{{content.manufacturer_idmanufacturer.phone_number}}</h5> 
+          <h5>Email:{{content.manufacturer_idmanufacturer.email}}</h5> 
+          
+          
+            {% if flag2 == True %}
+            <button type="button" class="btn btn-secondary btn-lg" disabled>Out of stock for now</button>
+            {% else %}
+            {% if flag == True %}
+            <a class="btn btn-primary btn-lg " href="#" role="button">Added to Cart</a>
+            
+            
+            {% else %}
+            
+            <a class="btn btn-primary btn-lg " href="/addtocart/{{content.idproduct}}" role="button">Add to Cart</a>
+            <button class="btn btn-primary btn-lg addtowishlist" pid={{content.idproduct}}  role="button"><span id="Abc">{{str}}</span></button>
+            {% endif %}
+            {% endif %}
+            
+          {% comment %} <a href="#" class="btn btn-danger shadow px-5 py-2 ms-4">Buy Now</a> {% endcomment %}
+          
+         </div>
+        </div>
+       </div>
+      </div >
+    {% endblock body %}
+      
+
+<!-- <h1>{{content.idproduct}}</h1>
+<h2>{{content.product_name}}</h2>
+{% comment %} <h1>{{content.idproduct}}</h1>
+<h1>{{content.idproduct}}</h1>
+<h1>{{content.idproduct}}</h1> {% endcomment %}
+{% if flag == True %}
+<a class="btn btn-primary btn-lg " href="#" role="button">Added to Cart</a>
+{% comment %} <div class="dropdown"> {% endcomment %}
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Quantity:
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">1</a>
+      <a class="dropdown-item" href="#">2</a>
+      <a class="dropdown-item" href="#">3</a>
+      <a class="dropdown-item" href="#">4</a>
+      <a class="dropdown-item" href="#">5</a>
+      
+    </div>
+  </div>
+
+{% else %}
+
+<a class="btn btn-primary btn-lg " href="/addtocart/{{content.idproduct}}" role="button">Add to Cart</a>
+{% endif %} -->
+
