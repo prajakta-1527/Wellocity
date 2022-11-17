@@ -1,0 +1,24 @@
+
+
+{% extends 'blog/index.html'%}
+{% block style %}
+<style>
+    .container{
+        min-height : 10vh;
+    }
+</style>
+{% endblock style %}
+{% block body %} 
+<div class="container-fluid">
+    <h1>{{req.heading}}</h1>
+    <br>
+    <img src={{req.photo}}height="150" width="150">
+    
+    <p>{{req.content|safe}}</p>
+</div>
+<footer class="text-light bg-dark position-absolute fixed-bottom">
+    <p class="text-centre my-0 py-2">
+      Copyright &copy; 2022-All rights reserved
+    </p>
+  </footer>
+{% endblock body %}
